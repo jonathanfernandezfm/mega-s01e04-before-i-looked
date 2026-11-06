@@ -5,7 +5,7 @@ import type { DigestRow, ReadNight, RunLine, RunStatus } from './types.js';
 const STATUSES: readonly unknown[] = ['ok', 'retry', 'fail'] satisfies RunStatus[];
 
 /** Parses one log line; null when it isn't a valid run line. */
-function parseLine(text: string): RunLine | null {
+export function parseLine(text: string): RunLine | null {
   let value: unknown;
   try {
     value = JSON.parse(text);
